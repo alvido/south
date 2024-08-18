@@ -1,2 +1,47 @@
 .hero {
+
+    &__banner {
+        @include flex-center;
+        padding: 145px 0;
+        color: var(--color-white);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &--home {
+            min-height: 640px;
+        }
+
+        & h1 {
+            max-width: 740px;
+            text-align: center;
+            text-wrap: balance;
+        }
+
+        & .buttons {
+            @include flex-center;
+            margin-top: 50px;
+            gap: 35px;
+        }
+    }
+
+    &__info {
+        @include flex-center;
+        color: var(--color-light-blue);
+        background: var(--color-blue);
+        border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
+
+        &-item {
+            @include flex-center;
+            width: 33%;
+            min-height: 200px;
+            text-align: center;
+
+            &:nth-child(2) {
+                border-left: 2px solid var(--color-green);
+                border-right: 2px solid var(--color-green);
+            }
+        }
+    }
+
 }

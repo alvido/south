@@ -1,40 +1,39 @@
-$container: 1440;
+$container: 1280;
 
 :root {
 
     /*colors*/
-    --color-dark: #3A5F6F;
-    --color-cyan: #7ECDC8;
-    --color-pink: #F3AFCD;
+    --color-black: #252323;
+    --color-blue: #3e5680;
+    --color-light-blue: #b5d5ec;
 
-    --color-dark-alt: #292a32;
-    --color-light: #ffffff;
-    --color-accent: #5570FF;
-    --color-gray: #FBFBFC;
-    --color-gray-alt: #e0e0e0;
+    --color-gray: #e0e3e6;
+    --color-green: #7cb89a;
+    --color-white: #ffffff;
+
+    --color-transparent: transparent;
     --color-shadow: rgba(22, 28, 45, 0.05);
     /*colors*/
 
     /*border*/
-    --border: 2px solid var(--color-accent);
-    --border-radius: 14px;
-    --border-radius-small: 7px;
-    --border-radius-large: 32px;
+    --border: 2px solid var(--color-blue);
+    --border-radius: 16px;
+    --border-radius-small: 10px;
+    --border-radius-large: 30px;
     /*border*/
 
     /*body*/
-    --font-family-base: "Nunito", sans-serif;
-
+    --font-family-base: "Montserat", serif;
 
     --container-width: #{$container}px;
-    --container-padding-x: 24px;
+    --container-padding-x: 20px;
 
     --section-padding-y: 80px;
     /*body*/
 
     /*button*/
-    --input-height: 64px;
-    --button-height: 64px;
+    --input-height: 55px;
+    --button-height: 46px;
     --icon-button-height: 30px;
 
     --transition-duration: 0.3s;

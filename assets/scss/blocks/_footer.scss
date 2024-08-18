@@ -1,4 +1,12 @@
 .footer {
     margin-top: auto;
+    padding: 82px 0 88px;
+    background: var(--color-blue);
+    border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
 
+    &__logo {
+        & img {
+            max-width: 120px;
+        }
+    }
 }
