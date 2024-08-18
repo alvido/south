@@ -1,7 +1,6 @@
 .header {
     position: relative;
     padding: 20px 0;
-    background: $color-cyan;
     @include fluid-text(50, 22);
 
     &.fixed {
