@@ -48,6 +48,7 @@ h6 {
 
 h1 {
     @include fluid-text(42, 30);
+    font-family: "Montserat", serif;
     font-weight: 400
 }
 
@@ -90,6 +91,8 @@ h5 {
 
 .title {
     font-size: 16px;
+    font-weight: 700;
     color: var(--color-green);
     line-height: 1.5;
+    text-transform: uppercase;
 }

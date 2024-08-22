@@ -249,7 +249,7 @@ svg * {
   --border-radius-large: 30px;
   /*border*/
   /*body*/
-  --font-family-base: "Montserat", serif;
+  --font-family-base: "Montserat", sans-serif;
   --container-width: 1280px;
   --container-padding-x: 20px;
   --section-padding-y: 80px;
@@ -349,6 +349,7 @@ h6 {
 
 h1 {
   font-size: clamp(30px, 3.28125vw, 42px);
+  font-family: "Montserat", serif;
   font-weight: 400;
 }
 
@@ -397,8 +398,10 @@ h5 {
 
 .title {
   font-size: 16px;
+  font-weight: 700;
   color: var(--color-green);
   line-height: 1.5;
+  text-transform: uppercase;
 }
 
 @-webkit-keyframes backAndForth {
@@ -1092,10 +1095,95 @@ h5 {
 
 .footer {
   margin-top: auto;
-  padding: 82px 0 88px;
+  padding: 82px 0 30px;
+  color: var(--color-white);
   background: var(--color-blue);
   border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
 }
+.footer .wrapper {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
 .footer__logo img {
   max-width: 120px;
+}
+.footer__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 8px;
+}
+.footer__col {
+  max-width: 175px;
+}
+.footer__col h5 {
+  margin-bottom: 25px;
+}
+.footer__col a {
+  display: block;
+  position: relative;
+}
+.footer__col a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  translate: -50% 0;
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--color-light-blue);
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+@media (hover: hover) {
+  .footer__col a:hover {
+    color: var(--color-light-blue);
+  }
+  .footer__col a:hover::after {
+    width: 100%;
+  }
+}
+@media (hover: none) {
+  .footer__col a:active {
+    color: var(--color-light-blue);
+  }
+  .footer__col a:active::after {
+    width: 100%;
+  }
+}
+.footer svg *[fill] {
+  fill: revert-layer;
+}
+.footer .social a::after {
+  display: none;
+}
+@media (hover: hover) {
+  .footer .social a:hover {
+    scale: 1.1;
+  }
+  .footer .social a:hover svg path {
+    fill: var(--color-light-blue);
+  }
+}
+@media (hover: none) {
+  .footer .social a:active {
+    scale: 1.1;
+  }
+  .footer .social a:active svg path {
+    fill: var(--color-light-blue);
+  }
+}
+.footer .copy {
+  margin-top: 40px;
+  text-align: right;
+  font-size: 14px;
 }/*# sourceMappingURL=style.css.map */
