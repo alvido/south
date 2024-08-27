@@ -689,13 +689,10 @@ blockquote.blockquote--light::before {
   rotate: -45deg;
 }
 
-.form {
-  /* Стилизованный radio button */
-  /* При отмеченном radio button изменить цвет и показать "галочку" */
-  /* Стилизованный чекбокс */
-  /* При отмеченном чекбоксе изменить цвет и показать "галочку" */
-}
-.form label {
+form {
+  padding: 45px 50px;
+  max-width: 700px;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -706,66 +703,120 @@ blockquote.blockquote--light::before {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: 16px;
-  font-size: clamp(1rem, 0.186rem + 1.69vw, 1.5rem);
-  font-weight: 700;
+  gap: 20px;
+  background: var(--color-light-blue);
+  border-radius: var(--border-radius-large);
+  /* Стилизованный radio button */
+  /* При отмеченном radio button изменить цвет и показать "галочку" */
+  /* Стилизованный чекбокс */
+  /* При отмеченном чекбоксе изменить цвет и показать "галочку" */
 }
-.form input,
-.form select {
-  margin: 0;
-  font-size: clamp(16px, 1.5625vw, 20px);
-  font-weight: 500;
-  outline: none;
+@media (max-width: 767px) {
+  form {
+    max-width: none;
+    width: 100%;
+    padding: 35px;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 560px) {
+  form {
+    padding-inline: 20px;
+    gap: 15px;
+  }
+}
+form .wrap {
   width: 100%;
-  height: 64px;
-  padding: 16px 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 560px) {
+  form .wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 15px;
+  }
+}
+form .button {
+  margin-top: 5px;
+}
+@media (max-width: 560px) {
+  form .button {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  font-size: 16px;
+  gap: 10px;
+}
+form label.middle {
+  width: 50%;
+}
+form label .mark {
   color: var(--color-black);
-  border-radius: 40px;
-  border: 1px solid rgba(58, 95, 111, 0.16);
+  opacity: 0.5;
 }
-.form input::-webkit-input-placeholder, .form select::-webkit-input-placeholder {
+form input,
+form select,
+form textarea {
+  margin: 0;
+  padding: 16px 24px;
+  width: 100%;
+  height: var(--input-height);
+  border-radius: 5px;
+  outline: none;
+  border: var(--border);
+}
+form input::-webkit-input-placeholder, form select::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
   color: #3A5F6F;
 }
-.form input::-moz-placeholder, .form select::-moz-placeholder {
+form input::-moz-placeholder, form select::-moz-placeholder, form textarea::-moz-placeholder {
   color: #3A5F6F;
 }
-.form input:-ms-input-placeholder, .form select:-ms-input-placeholder {
+form input:-ms-input-placeholder, form select:-ms-input-placeholder, form textarea:-ms-input-placeholder {
   color: #3A5F6F;
 }
-.form input::-ms-input-placeholder, .form select::-ms-input-placeholder {
+form input::-ms-input-placeholder, form select::-ms-input-placeholder, form textarea::-ms-input-placeholder {
   color: #3A5F6F;
 }
-.form input::placeholder,
-.form select::placeholder {
+form input::placeholder,
+form select::placeholder,
+form textarea::placeholder {
   color: #3A5F6F;
 }
 @media (max-width: 767px) {
-  .form input,
-  .form select {
+  form input,
+  form select,
+  form textarea {
     height: 56px;
   }
 }
-.form input:focus-visible,
-.form select:focus-visible {
-  border: 1px solid var(--color-cyan);
+form input:focus-visible,
+form select:focus-visible,
+form textarea:focus-visible {
+  border: 1px solid var(--color-blue);
 }
-.form textarea {
-  margin: 0;
-  font-size: clamp(16px, 1.5625vw, 20px);
-  font-weight: 500;
-  outline: none;
-  width: 100%;
-  min-height: 120px;
-  padding: 16px 24px;
-  color: var(--color-black);
-  border-radius: 24px;
-  border: 1px solid rgba(58, 95, 111, 0.16);
+form textarea {
+  min-height: 100px;
   resize: none;
 }
-.form textarea:focus-visible {
-  border: 1px solid var(--color-cyan);
-}
-.form .custom-radio {
+form .custom-radio {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -775,14 +826,14 @@ blockquote.blockquote--light::before {
   /* Скрыть стандартный radio button */
   /* Стиль для видимого элемента radio button */
 }
-.form .custom-radio input[type=radio] {
+form .custom-radio input[type=radio] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
 }
-.form .custom-radio .radiomark {
+form .custom-radio .radiomark {
   display: inline-block;
   width: 24px;
   height: 24px;
@@ -795,7 +846,7 @@ blockquote.blockquote--light::before {
   transition: all 0.3s ease;
   /* Отображение "галочки" внутри radio button */
 }
-.form .custom-radio .radiomark::after {
+form .custom-radio .radiomark::after {
   content: "";
   position: absolute;
   display: block;
@@ -809,14 +860,14 @@ blockquote.blockquote--light::before {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.form .custom-radio input[type=radio]:checked + .radiomark {
+form .custom-radio input[type=radio]:checked + .radiomark {
   background-color: var(--color-cyan);
   border: 1px solid var(--color-cyan);
 }
-.form .custom-radio input[type=radio]:checked + .radiomark::after {
+form .custom-radio input[type=radio]:checked + .radiomark::after {
   opacity: 1;
 }
-.form .custom-checkbox {
+form .custom-checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -836,14 +887,14 @@ blockquote.blockquote--light::before {
   /* Скрыть стандартный чекбокс */
   /* Стиль для видимого элемента чекбокса */
 }
-.form .custom-checkbox input[type=checkbox] {
+form .custom-checkbox input[type=checkbox] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
 }
-.form .custom-checkbox .checkmark {
+form .custom-checkbox .checkmark {
   display: inline-block;
   width: 48px;
   height: 28px;
@@ -853,7 +904,7 @@ blockquote.blockquote--light::before {
   cursor: pointer;
   /* Отображение "галочки" внутри чекбокса */
 }
-.form .custom-checkbox .checkmark::after {
+form .custom-checkbox .checkmark::after {
   content: "";
   position: absolute;
   display: block;
@@ -866,10 +917,10 @@ blockquote.blockquote--light::before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-.form .custom-checkbox input[type=checkbox]:checked + .checkmark {
+form .custom-checkbox input[type=checkbox]:checked + .checkmark {
   background-color: var(--color-accent);
 }
-.form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
+form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
   left: auto;
   right: 2px;
 }
@@ -1356,7 +1407,7 @@ blockquote.blockquote--light::before {
     padding: 25px;
   }
 }
-.focus .services__list li h5 {
+.focus .services__list li h3 {
   color: var(--color-blue);
   font-size: 18px;
   font-weight: 600;
@@ -1446,7 +1497,7 @@ blockquote.blockquote--light::before {
     width: 100%;
   }
 }
-.focus .investment__list li h5 {
+.focus .investment__list li h4 {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
@@ -1461,8 +1512,82 @@ blockquote.blockquote--light::before {
   text-wrap: balance;
 }
 
+.contact .wrapper {
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media (max-width: 767px) {
+  .contact .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.contact .title {
+  margin-bottom: 25px;
+}
+@media (max-width: 767px) {
+  .contact .title {
+    margin-bottom: 20px;
+  }
+}
+.contact__links {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 10px;
+}
+@media (max-width: 767px) {
+  .contact__links {
+    margin-top: 20px;
+  }
+}
+.contact__links a {
+  position: relative;
+  font-size: clamp(16px, 1.40625vw, 18px);
+}
+.contact__links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  translate: -50% 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-blue);
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+@media (hover: hover) {
+  .contact__links a:hover {
+    color: var(--color-blue);
+  }
+  .contact__links a:hover::after {
+    width: 100%;
+  }
+}
+@media (hover: none) {
+  .contact__links a:active {
+    color: var(--color-blue);
+  }
+  .contact__links a:active::after {
+    width: 100%;
+  }
+}
+
 .footer {
-  margin-top: 150px;
+  margin-top: clamp(3.125rem, 1.83rem + 5.52vw, 6.25rem);
   padding: 82px 0 30px;
   color: var(--color-white);
   background: var(--color-blue);
@@ -1481,6 +1606,20 @@ blockquote.blockquote--light::before {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+}
+.footer__logo {
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+@media (hover: hover) {
+  .footer__logo:hover {
+    scale: 1.1;
+  }
+}
+@media (hover: none) {
+  .footer__logo:active {
+    scale: 1.1;
   }
 }
 @media (max-width: 767px) {

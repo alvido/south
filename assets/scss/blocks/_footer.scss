@@ -1,5 +1,5 @@
 .footer {
-    margin-top: 150px;
+    margin-top: clamp(3.125rem, 1.83rem + 5.52vw, 6.25rem);
     padding: 82px 0 30px;
     color: var(--color-white);
     background: var(--color-blue);
@@ -16,6 +16,11 @@
     }
 
     &__logo {
+        transition-duration: var(--transition-duration);
+
+        @include hover {
+            scale: 1.1;
+        }
 
         @include mobile {
             width: 100%;

@@ -1,26 +1,74 @@
-.form {
+form {
+    padding: 45px 50px;
+    max-width: 700px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    background: var(--color-light-blue);
+    border-radius: var(--border-radius-large);
+
+    @include mobile {
+        max-width: none;
+        width: 100%;
+        padding: 35px;
+        border-radius: 20px;
+    }
+
+    @include phone {
+        padding-inline: 20px;
+        gap: 15px;
+    }
+
+    & .wrap {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+
+        @include phone {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    & .button {
+        margin-top: 5px;
+
+        @include phone {
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
 
     label {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
-        font-size: clamp(1rem, 0.186rem + 1.69vw, 1.5rem);
-        font-weight: 700;
+        width: 100%;
+        font-size: 16px;
+        gap: 10px;
+
+        &.middle {
+            width: 50%;
+        }
+
+        & .mark {
+            color: var(--color-black);
+            opacity: .5;
+        }
     }
 
     input,
-    select {
+    select,
+    textarea {
         margin: 0;
-        @include fluid-text(20, 16);
-        font-weight: 500;
-        outline: none;
-        width: 100%;
-        height: 64px;
         padding: 16px 24px;
-        color: var(--color-black);
-        border-radius: 40px;
-        border: 1px solid rgba(58, 95, 111, 0.16);
+        width: 100%;
+        height: var(--input-height);
+        border-radius: 5px;
+        outline: none;
+        border: var(--border);
 
         &::placeholder {
             color: #3A5F6F;
@@ -32,26 +80,13 @@
         }
 
         &:focus-visible {
-            border: 1px solid var(--color-cyan);
+            border: 1px solid var(--color-blue);
         }
     }
 
     textarea {
-        margin: 0;
-        @include fluid-text(20, 16);
-        font-weight: 500;
-        outline: none;
-        width: 100%;
-        min-height: 120px;
-        padding: 16px 24px;
-        color: var(--color-black);
-        border-radius: 24px;
-        border: 1px solid rgba(58, 95, 111, 0.16);
+        min-height: 100px;
         resize: none;
-
-        &:focus-visible {
-            border: 1px solid var(--color-cyan);
-        }
     }
 
     /* Стилизованный radio button */
