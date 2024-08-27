@@ -1,10 +1,10 @@
 // Burger Menu Open //
-// Burger Menu Open //
 document.addEventListener("DOMContentLoaded", function () {
   // Выбираем бургер-кнопку и навигацию
-  let burgerButton = document.getElementById("burgerButton");
-  let navigation = document.querySelector(".navigation");
-  let links = document.querySelectorAll(".navigation__link");
+  const burgerButton = document.getElementById("burgerButton");
+  const navigation = document.querySelector(".navigation");
+  const links = document.querySelectorAll(".navigation__link");
+  const body = document.querySelector("body");
 
   // Если бургер-кнопка существует, добавляем обработчик события
   if (burgerButton) {
@@ -12,16 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
       e.stopPropagation(); // Остановка всплытия события
       burgerButton.classList.toggle("burger--active"); // Переключаем класс активности бургер-кнопки
       navigation.classList.toggle("navigation--active"); // Переключаем класс активности навигации
+      body.classList.toggle("lock"); // Блокируем прокрутку страницы
+    });
+
+    // Добавляем обработчики событий для ссылок навигации
+    links.forEach((link) => {
+      link.addEventListener("click", function () {
+        burgerButton.classList.remove("burger--active");
+        navigation.classList.remove("navigation--active");
+        body.classList.remove("lock");
+      });
     });
   }
-
-  links.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      burgerButton.classList.remove("burger--active");
-      navigation.classList.remove("navigation--active");
-      console.log("link", link);
-    });
-  });
 });
 //
 
@@ -185,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       case "tel":
         // Проверка на валидность tel
-        const isValidTel =value.replace(/^[0-9\s]/g, ""); // Разрешаем только буквы и пробелы
+        const isValidTel = value.replace(/^[0-9\s]/g, ""); // Разрешаем только буквы и пробелы
 
         if (!isValidTel || value === "") {
           // Проверяем что не пустая строка

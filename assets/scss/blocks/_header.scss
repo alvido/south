@@ -1,6 +1,9 @@
 .header {
-    position: relative;
     padding: 20px 0;
+
+    @include mobile {
+        padding: 15px 0;
+    }
 
     &--home {
         position: absolute;
@@ -17,6 +20,10 @@
         top: 0;
         z-index: 2;
         background: var(--color-white);
+    }
+
+    & .logo {
+        z-index: 2;
     }
 
     &__button {

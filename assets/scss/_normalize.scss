@@ -7,6 +7,19 @@
   box-sizing: border-box;
 }
 
+ul:where(:not([class])) {
+  margin: 0;
+  padding-left: 20px;
+
+  & li {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
 /**
   Убираем внутренние отступы слева тегам списков,
   у которых есть атрибут class

@@ -1,0 +1,150 @@
+.focus {
+
+    & .title {
+        margin-bottom: 35px;
+
+        @include mobile {
+            margin-bottom: 20px;
+        }
+    }
+
+    & .wrapper {
+        align-items: flex-start;
+        padding: 30px 0 50px;
+
+        @include tablet {
+            flex-direction: column;
+        }
+
+        @include mobile {
+            padding: 25px 0 35px;
+        }
+    }
+
+    & .column {
+        max-width: 600px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            width: 100%;
+            max-width: none;
+        }
+
+        &:first-child {
+            max-width: 520px;
+            gap: clamp(1.563rem, 0.786rem + 3.31vw, 3.438rem);
+
+            @include tablet {
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+        & ul {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+
+    & .services__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        & li {
+            padding: 30px;
+            background: var(--color-gray);
+            border-radius: var(--border-radius-small);
+
+            @include mobile {
+                padding: 25px;
+            }
+
+            & h5 {
+                color: var(--color-blue);
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    & .icons__list {
+        margin-top: 10px;
+        @include flex-center;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        @include phone {
+            gap: 6px;
+        }
+
+        & li {
+            @include flex-center;
+            width: 110px;
+            height: 147px;
+            border: 1px solid var(--color-gray);
+            border-radius: var(--border-radius-small);
+
+            @include tablet {
+                height: 110px;
+            }
+
+            & img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    & .investment__list {
+        margin-top: clamp(1.563rem, 1.304rem + 1.1vw, 2.188rem);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        border-radius: var(--border-radius-small);
+        overflow: hidden;
+
+        @include phone {
+            gap: 5px;
+        }
+
+        & li {
+            width: calc(25% - 7.5px);
+            padding: 35px 25px;
+            min-height: 147px;
+            background: var(--color-blue);
+
+            @include tablet {
+                width: calc(33% - 5px);
+            }
+
+            @include mobile {
+                width: calc(50% - 5px);
+            }
+
+            @include phone {
+                width: 100%;
+            }
+
+            & h5 {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1.4;
+                color: var(--color-white);
+            }
+
+            & p {
+                margin-top: 10px;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.25;
+                color: var(--color-light-blue);
+                text-wrap: balance;
+            }
+        }
+    }
+}

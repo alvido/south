@@ -33,7 +33,8 @@
                         <a href="contact.html">Contact </a>
                     </li>
                 </ul>
-                <a class="header__button button" href="https://example.com/files/document.pdf" target="_blank" download>
+                <a class="header__button button button--transparent" href="https://example.com/files/document.pdf"
+                    target="_blank" download>
                     <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M3.20136 10.011C3.06336 10.011 2.97036 10.0245 2.92236 10.038V10.9215C2.97936 10.935 3.05061 10.9387 3.14886 10.9387C3.50811 10.9387 3.72936 10.7572 3.72936 10.4505C3.72936 10.176 3.53886 10.011 3.20136 10.011ZM5.8166 10.02C5.6666 10.02 5.5691 10.0335 5.51135 10.047V12.0045C5.5691 12.018 5.6621 12.018 5.7461 12.018C6.35885 12.0225 6.75785 11.685 6.75785 10.971C6.76235 10.3485 6.3986 10.02 5.8166 10.02Z"
@@ -45,48 +46,178 @@
                     Download Overview
                 </a>
             </nav>
+            <button class="burger" id="burgerButton">
+                <span>Menu</span>
+            </button>
         </div>
     </header>
 
     <main class="main">
-        <!-- <section class="hero">
-            <div class="hero__banner hero__banner--home" style="background-image: url(assets/images/banner-home.jpg);">
-                <div class="container">
-                    <h1>Growth investors offering an alternative to traditional private equity</h1>
-                    <div class="buttons">
-                        <button class="button button--white">strategy</button>
-                        <button class="button button--transparent">partnerships</button>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__info">
-                <div class="hero__info-item large">
-                    Originated and <br> closed x platforms
-                </div>
-                <div class="hero__info-item large">
-                    Advised on $5B+ of deal value <br> for founders and partners
-                </div>
-                <div class="hero__info-item large">
-                    Deep advisory <br> network
-                </div>
+        <section class="hero hero--home" style="background-image: url(assets/images/banner-home.jpg);">
+            <div class="container">
+                <h1>Growth investors offering an alternative to traditional private equity</h1>
             </div>
         </section>
-        <section class="partners">
+        <section class="partner">
             <div class="container">
-                <h2 class="title">
-                    Why Partner with 16 South
-                </h2>
+                <div class="wrapper">
+                    <p class="title">
+                        Why Partner with 16 South
+                    </p>
+                    <p>
+                        We offer more than just capital. Our hands-on approach, grounded in servant leadership and
+                        collaboration, ensures success is achieved with integrity. Our flexible strategies allow us to
+                        reinvest in your business, creating sustainable, long-term success.
+                    </p>
+                </div>
+                <blockquote>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod
+                    tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt.
+                </blockquote>
             </div>
-        </section> -->
+        </section>
+        <section class="focus">
+            <div class="container">
+                <p class="title">Investment Focus</p>
+                <h2>Business Models</h2>
+                <div class="wrapper">
+                    <div class="column">
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing </li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                            <li>Lorem ipsum dolor sit amet, consectetur </li>
+                        </ul>
+                        <blockquote class="blockquote--light">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua sed do eiusmod tempor incididunt.
+                        </blockquote>
+                    </div>
+                    <div class="column">
+                        <ul class="services__list">
+                            <li>
+                                <h5>Field Services</h5>
+                                <p>HVAC, pest control, home inspection, landscaping, security, pool maintenance, and
+                                    more.</p>
+                            </li>
+                            <li>
+                                <h5>Multi-Unit Consumer Services</h5>
+                                <p>Fitness, auto aftermarket, med spas, and general/specialty dental services.</p>
+                            </li>
+                            <li>
+                                <h5>Value-Added Distribution</h5>
+                                <p>Businesses that enhance product offerings through additional services or improved
+                                    efficiency.</p>
+                            </li>
+                        </ul>
+                        <ul class="icons__list">
+                            <li>
+                                <img src="assets/images/icon/partners/hummer.svg" alt="hummer">
+                            </li>
+                            <li>
+                                <img src="assets/images/icon/partners/weight.svg" alt="weight">
+                            </li>
+                            <li>
+                                <img src="assets/images/icon/partners/house.svg" alt="house">
+                            </li>
+                            <li>
+                                <img src="assets/images/icon/partners/guard.svg" alt="guard">
+                            </li>
+                            <li>
+                                <img src="assets/images/icon/partners/car.svg" alt="car">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h2>Partnership Criteria</h2>
+                <ul class="investment__list">
+                    <li>
+                        <h5>Region</h5>
+                        <p>Southeast U.S. (TX to VA)</p>
+                    </li>
+                    <li>
+                        <h5>Revenue</h5>
+                        <p>$10M–$50M revenue</p>
+                    </li>
+                    <li>
+                        <h5>Profitability</h5>
+                        <p>$1M–$4M EBITDA</p>
+                    </li>
+                    <li>
+                        <h5>Company</h5>
+                        <p>Family-owned/entrepreneur-run</p>
+                    </li>
+                    <li>
+                        <h5>Transaction Size</h5>
+                        <p>$15M–$100M</p>
+                    </li>
+                    <li>
+                        <h5>Equity Investment</h5>
+                        <p>$5M–$50M</p>
+                    </li>
+                    <li>
+                        <h5>Ownership</h5>
+                        <p>Majority or select minority, with management alignment</p>
+                    </li>
+                    <li>
+                        <h5>Investment Type</h5>
+                        <p>Buyouts & recapitalizations, excl. carveouts</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="about">
+            <div class="container">
+                <p class="title">about us</p>
+            </div>
+            <div class="about__banner" style="background-image: url(assets/images/about-bg.jpg);">
+                <ul class="about__banner-list">
+                    <li class="about__banner-item">
+                        <img src="assets/images/icon/about/diamond.svg" alt="diamond">
+                        <p>
+                            Strong core values and culture - we believe HOW you do something matters more than just the
+                            result. Servant leadership principles and collaboration are the centerpiece of our operating
+                            style
+                        </p>
+                    </li>
+                    <li class="about__banner-item">
+                        <img src="assets/images/icon/about/partners.svg" alt="diamond">
+                        <p>
+                            Our advisory partners are not just "to this", they are "to this' and well networked which
+                            amplifies the speed and success rates of value creation initiatives
+                        </p>
+                    </li>
+                    <li class="about__banner-item">
+                        <img src="assets/images/icon/about/crossroad.svg" alt="diamond">
+                        <p>
+                            We use limited leverage to ensure flexibility in all market environments and use excess
+                            earnings
+                            to reinvest.in the business
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="container">
+
+            </div>
+        </section>
 
 
     </main>
 
     <footer class="footer">
         <div class="wrapper container">
-            <a href="index.html" class="footer__logo logo">
-                <img src="assets/images/footer/logo.svg" alt="logo">
-            </a>
+            <div class="footer__logo">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/footer/logo.svg" alt="logo">
+                </a>
+            </div>
             <div class="footer__col">
                 <h5 class="title">16 South</h5>
                 <nav class="footer__nav">
@@ -104,10 +235,9 @@
                 </nav>
             </div>
             <div class="footer__col">
-                <h5 class="title">Address</h5>
+                <h5 class="title">Location</h5>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur,
-                    12345
+                    Charlotte, NC
                 </p>
             </div>
             <div class="footer__col">

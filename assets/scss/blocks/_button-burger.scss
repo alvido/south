@@ -1,16 +1,23 @@
 .burger {
     @include reset-button;
     @include squere(40px);
+    display: none;
     position: relative;
     z-index: 2;
+    background: var(--color-blue);
+    border-radius: 50%;
+
+    @include mobile {
+        @include flex-center;
+    }
 
     &::before,
     &::after {
         content: '';
         display: block;
-        width: 30px;
-        height: 3px;
-        background: black;
+        width: 16px;
+        height: 2px;
+        background: var(--color-white);
         border-radius: 3px;
 
         position: absolute;
@@ -29,16 +36,22 @@
 
     & span {
         font-size: 0;
+        display: block;
+        width: 16px;
+        height: 2px;
+        background: var(--color-white);
     }
 
     &.burger--active {
+        border: 1px solid var(--color-blue);
+        background: var(--color-white);
 
         &::before,
         &::after {
-            width: 90%;
             top: 50%;
             bottom: auto;
             translate: -50% -50%;
+            background: var(--color-blue);
         }
 
         &::before {
@@ -47,7 +60,6 @@
 
         &::after {
             rotate: -45deg;
-
         }
     }
 }

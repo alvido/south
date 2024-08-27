@@ -1,0 +1,24 @@
+.partner {
+
+    & .wrapper {
+        align-items: flex-start;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        & p {
+            max-width: 690px;
+            width: 60%;
+
+            @include mobile {
+                max-width: none;
+                width: 100%;
+            }
+        }
+    }
+
+    & blockquote {
+        margin-top: clamp(1.875rem, 0.58rem + 5.52vw, 5rem);
+    }
+}

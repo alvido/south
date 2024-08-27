@@ -1,2 +1,61 @@
 .about {
+
+    &__banner {
+
+        margin-top: 35px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include mobile {
+            margin-top: 25px;
+        }
+
+        &-list {
+            display: flex;
+            min-height: 600px;
+
+            @include tablet {
+                flex-direction: column;
+            }
+        }
+
+        &-item {
+            width: 33%;
+            padding: 260px 60px 60px;
+            color: var(--color-white);
+            @include fluid-text(18, 16);
+            font-weight: 500;
+
+            @include laptop {
+                padding-inline: 40px;
+            }
+
+            @include tablet {
+                width: 100%;
+                padding: 40px 16px;
+            }
+
+            &:nth-child(2) {
+                border-left: var(--border);
+                border-right: var(--border);
+
+                @include tablet {
+                    border: none;
+                    border-top: var(--border);
+                    border-bottom: var(--border);
+                }
+            }
+
+            & img {
+                max-height: 80px;
+                margin-bottom: 40px;
+
+                @include mobile {
+                    max-height: 60px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
 }

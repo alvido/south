@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    @include fluid-text(16, 16);
+    @include fluid-text(20, 16);
     display: flex;
     flex-direction: column;
 
@@ -12,7 +12,7 @@ body {
 
     font-family: var(--font-family-base);
     font-weight: 400;
-    line-height: 1.25;
+    line-height: 1.5;
 
     &.lock {
         max-height: 100vh;
@@ -22,7 +22,7 @@ body {
 
 main {
     overflow: hidden;
-
+    flex: 1 0 auto;
 }
 
 a,
@@ -47,14 +47,17 @@ h6 {
 }
 
 h1 {
-    @include fluid-text(42, 30);
-    font-family: "Montserat", serif;
-    font-weight: 400
+    @include fluid-text(42, 26);
+    font-family: "PTserif", serif;
+    font-weight: 400;
+    line-height: 1.25;
 }
 
 h2 {
-    @include fluid-text(30, 24);
-    font-weight: 400
+    @include fluid-text(30, 22);
+    font-family: "PTserif", serif;
+    font-weight: 400;
+    line-height: 1.25;
 }
 
 h3 {
@@ -63,17 +66,20 @@ h3 {
 }
 
 h4 {
-    @include fluid-text(16, 20);
+    @include fluid-text(20, 16);
 }
 
 h5 {
-    @include fluid-text(14, 14);
+    @include fluid-text(18, 14);
+}
+
+h6 {
+    font-size: 14;
 }
 
 .large {
     font-size: 18px;
     font-weight: 500;
-    line-height: 1.5;
 }
 
 .small {
@@ -82,17 +88,67 @@ h5 {
 }
 
 .wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
+    @include flex-center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 25px;
 }
 
 .title {
-    font-size: 16px;
+    @include fluid-text(16, 12);
     font-weight: 700;
     color: var(--color-green);
     line-height: 1.5;
     text-transform: uppercase;
+}
+
+section {
+    margin-top: clamp(3.125rem, 1.83rem + 5.52vw, 6.25rem);
+}
+
+blockquote {
+    position: relative;
+    margin: 0;
+    padding: 140px 40px 50px;
+
+    font-weight: 500;
+    color: var(--color-white);
+    background: var(--color-blue);
+    border-radius: var(--border-radius-small);
+
+    @include mobile {
+        padding: 105px 25px 30px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 60px;
+        top: 60px;
+        display: block;
+        width: 49px;
+        height: 41px;
+        background: url(../images/icon/quote.svg) no-repeat center;
+        background-size: cover;
+
+        @include mobile {
+            top: 42px;
+            left: 34px;
+            width: 42px;
+            height: 35px;
+        }
+    }
+
+    &.blockquote--light {
+        padding-top: 175px;
+        color: var(--color-black);
+        background: var(--color-light-blue);
+
+        &::before {
+            background-image: url(../images/icon/quote-blue.svg);
+        }
+
+        @include mobile {
+            padding: 105px 25px 30px;
+        }
+    }
 }

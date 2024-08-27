@@ -16,7 +16,7 @@ $container: 1280;
     /*colors*/
 
     /*border*/
-    --border: 2px solid var(--color-blue);
+    --border: 1px solid var(--color-white);
     --border-radius: 16px;
     --border-radius-small: 10px;
     --border-radius-large: 30px;
@@ -26,7 +26,7 @@ $container: 1280;
     --font-family-base: "Montserat", sans-serif;
 
     --container-width: #{$container}px;
-    --container-padding-x: 20px;
+    --container-padding-x: 16px;
 
     --section-padding-y: 80px;
     /*body*/
@@ -34,7 +34,7 @@ $container: 1280;
     /*button*/
     --input-height: 55px;
     --button-height: 46px;
-    --icon-button-height: 30px;
+    --icon-button-height: 40px;
 
     --transition-duration: 0.3s;
     /*button*/
