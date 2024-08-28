@@ -996,6 +996,81 @@ form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
   border-color: var(--color-cyan);
 }
 
+.swiper {
+  max-width: 790px;
+  margin: 0;
+}
+@media (max-width: 1023px) {
+  .swiper {
+    max-width: 100%;
+  }
+}
+
+.swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+  padding: 50px 60px;
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+}
+@media (max-width: 767px) {
+  .swiper-slide {
+    gap: 20px;
+    padding: 35px;
+  }
+}
+@media (max-width: 560px) {
+  .swiper-slide {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-inline: 20px;
+  }
+}
+
+.slide-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 45px;
+}
+@media (max-width: 767px) {
+  .slide-content {
+    gap: 20px;
+  }
+}
+
+.slide-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 .swiper-pagination {
   position: static;
   width: auto !important;
@@ -1232,6 +1307,11 @@ form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media (max-width: 560px) {
+  .hero {
+    padding: 70px 0;
+  }
 }
 .hero--home {
   min-height: 640px;
@@ -1476,6 +1556,54 @@ form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
   margin-top: clamp(1.875rem, 0.58rem + 5.52vw, 5rem);
 }
 
+.partnerships {
+  padding-block: clamp(2.125rem, 0.934rem + 5.08vw, 5rem) clamp(4.063rem, 3.674rem + 1.66vw, 5rem);
+  background: var(--color-light-blue);
+}
+.partnerships__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.partnerships__inner h2 {
+  max-width: 680px;
+  margin: 25px 0 45px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .partnerships__inner h2 {
+    margin: 20px 0 30px;
+  }
+}
+.partnerships__inner .wrapper {
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: clamp(2.5rem, 1.464rem + 4.42vw, 5rem);
+}
+@media (max-width: 1023px) {
+  .partnerships__inner .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.partnerships__inner p.info {
+  text-align: center;
+}
+
 .focus .title {
   margin-bottom: 35px;
 }
@@ -1659,6 +1787,9 @@ form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
   text-wrap: balance;
 }
 
+.contact {
+  margin-bottom: clamp(5rem, 4.482rem + 2.21vw, 6.25rem);
+}
 .contact .wrapper {
   width: 100%;
   -webkit-box-align: start;
@@ -1834,7 +1965,7 @@ form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
 }
 
 .advisory {
-  padding-block: clamp(3.125rem, 2.348rem + 3.31vw, 5rem);
+  padding-block: clamp(3.125rem, 2.348rem + 3.31vw, 5rem) clamp(5rem, 4.482rem + 2.21vw, 6.25rem);
   background: var(--color-gray);
 }
 .advisory h2 {
@@ -1886,11 +2017,16 @@ form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
 }
 
 .footer {
-  margin-top: clamp(3.125rem, 1.83rem + 5.52vw, 6.25rem);
+  margin-top: -30px;
   padding: 82px 0 30px;
   color: var(--color-white);
   background: var(--color-blue);
   border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+}
+@media (max-width: 560px) {
+  .footer {
+    padding: 35px 0 20px;
+  }
 }
 .footer .wrapper {
   -webkit-box-align: start;

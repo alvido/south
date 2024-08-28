@@ -1,4 +1,6 @@
 .contact {
+    margin-bottom: clamp(5rem, 4.482rem + 2.21vw, 6.25rem);
+
     & .wrapper {
         width: 100%;
         align-items: flex-start;

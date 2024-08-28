@@ -1,9 +1,13 @@
 .footer {
-    margin-top: clamp(3.125rem, 1.83rem + 5.52vw, 6.25rem);
+    margin-top: -30px;
     padding: 82px 0 30px;
     color: var(--color-white);
     background: var(--color-blue);
     border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+
+    @include phone {
+        padding: 35px 0 20px;
+    }
 
     & .wrapper {
         align-items: flex-start;
