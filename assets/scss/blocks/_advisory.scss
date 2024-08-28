@@ -1,0 +1,46 @@
+.advisory {
+    padding-block: clamp(3.125rem, 2.348rem + 3.31vw, 5rem);
+    background: var(--color-gray);
+
+    & h2 {
+        max-width: 890px;
+        margin: 25px 0 35px;
+
+        @include mobile {
+            margin: 20px 0 25px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 36px;
+
+        @include tablet {
+            gap: 15px;
+        }
+
+        & li {
+            width: 293px;
+            min-height: 295px;
+            padding: 30px;
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+
+            @include mobile {
+                width: 48%;
+                min-height: 245px;
+            }
+
+            @include phone {
+                width: 100%;
+            }
+
+            & .large {
+                color: var(--color-blue);
+                margin-bottom: 11px;
+            }
+        }
+    }
+}

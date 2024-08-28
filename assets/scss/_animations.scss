@@ -1,10 +1,18 @@
-@keyframes backAndForth {
+@keyframes upAndDown {
     0% {
         translate: 0 0;
     }
 
+    25% {
+        translate: 0 4px;
+    }
+
     50% {
-        translate: 10px 0;
+        translate: 0 0;
+    }
+
+    75% {
+        translate: 0 -4px;
     }
 
     100% {
@@ -12,24 +20,16 @@
     }
 }
 
-@keyframes rorateElements {
+@keyframes slideTop {
     0% {
-        rotate: 0;
+        opacity: 0;
     }
 
-    25% {
-        rotate: 15deg;
-    }
-
-    50% {
-        rotate: 0;
-    }
-
-    75% {
-        rotate: -15deg;
+    30% {
+        opacity: 0;
     }
 
     100% {
-        rotate: 0;
+        opacity: 1;
     }
 }

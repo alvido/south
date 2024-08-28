@@ -1,0 +1,30 @@
+.story {
+    padding-bottom: clamp(2.5rem, 1.464rem + 4.42vw, 5rem);
+    border-bottom: 1px solid var(--color-gray);
+
+    & .wrapper {
+        align-items: flex-start;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        & .title {
+            max-width: fit-content;
+        }
+
+        & p {
+            max-width: 740px;
+            width: 60%;
+
+            @include mobile {
+                max-width: none;
+                width: 100%;
+            }
+        }
+    }
+
+    & blockquote {
+        margin-top: clamp(1.875rem, 0.58rem + 5.52vw, 5rem);
+    }
+}

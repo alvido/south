@@ -1,0 +1,47 @@
+.founder {
+
+    & .wrapper {
+        margin-top: 25px;
+        align-items: flex-start;
+        gap: 60px;
+
+        @include tablet {
+            flex-direction: column;
+            gap: 40px;
+
+        }
+    }
+
+    & .column {
+        max-width: 620px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include tablet {
+            width: 100%;
+            max-width: none;
+        }
+
+        & .button {
+            margin-top: 35px;
+
+            @include mobile {
+                margin-top: 25px;
+            }
+        }
+    }
+
+    & blockquote {
+        width: 50%;
+        font-family: "PTserif";
+        @include fluid-text(30, 22);
+        padding-bottom: 120px;
+
+        @include tablet {
+            width: 100%;
+            padding-bottom: 50px;
+        }
+    }
+}
