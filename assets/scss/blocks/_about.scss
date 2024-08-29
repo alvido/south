@@ -47,6 +47,7 @@
             font-weight: 500;
             z-index: 1;
             cursor: pointer;
+            overflow: hidden;
 
             @include laptop {
                 padding-inline: 40px;
@@ -62,8 +63,7 @@
                 }
             }
 
-            @include hover {
-
+            &.show {
                 &::before {
                     opacity: 1;
                 }
@@ -75,6 +75,24 @@
                 & p {
                     animation: 0.3s ease-in 0.3s normal forwards 1 slideTop;
                 }
+            }
+
+            @include hover {
+                &::before {
+                    opacity: 1;
+                }
+
+                & .about__banner-content {
+                    transform: translateY(0%);
+                }
+
+                & p {
+                    animation: 0.3s ease-in 0.3s normal forwards 1 slideTop;
+                }
+            }
+
+            &:focus-visible {
+                outline: none;
             }
 
             &:nth-child(2) {
@@ -122,6 +140,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            pointer-events: none;
 
             transform: translateY(50%);
             transition: all 0.2s ease !important;

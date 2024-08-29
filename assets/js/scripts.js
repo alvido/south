@@ -28,149 +28,178 @@ document.addEventListener("DOMContentLoaded", function () {
 //
 
 // Fixed header
-$(document).ready(function () {
-  var header = $(".header"),
-    main = $(".main"),
-    headerH = header.innerHeight(),
-    scrollOffset = $(window).scrollTop();
+
+document.addEventListener("DOMContentLoaded", function () {
+  var header = document.querySelector(".header"),
+    main = document.querySelector(".main"),
+    headerH = header.offsetHeight,
+    scrollOffset = window.pageYOffset;
 
   checkScroll(scrollOffset);
 
-  $(window).on("scroll", function () {
-    scrollOffset = $(this).scrollTop();
+  window.addEventListener("scroll", function () {
+    scrollOffset = window.pageYOffset;
     checkScroll(scrollOffset);
   });
 
   function checkScroll(scrollOffset) {
     if (scrollOffset >= headerH) {
-      header.addClass("fixed");
-      main.css("padding-top", headerH); // Добавляем верхний отступ
+      header.classList.add("fixed");
+      main.style.paddingTop = headerH + "px"; // Добавляем верхний отступ
     } else {
-      header.removeClass("fixed");
-      main.css("padding-top", 0); // Убираем верхний отступ
+      header.classList.remove("fixed");
+      main.style.paddingTop = 0; // Убираем верхний отступ
     }
   }
 
   // Плавная прокрутка с учетом высоты заголовка
-  $('a[href*="#"]').on("click", function (event) {
-    event.preventDefault();
+  document.querySelectorAll('a[href*="#"]').forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
 
-    var targetId = $(this).attr("href").split("#")[1],
-      targetOffset = $("#" + targetId).offset().top - headerH;
+      var targetId = this.getAttribute("href").split("#")[1],
+        targetElement = document.getElementById(targetId);
 
-    $("html, body").animate(
-      {
-        scrollTop: targetOffset,
-      },
-      300
-    );
+      if (targetElement) {
+        var targetOffset = targetElement.offsetTop - headerH;
+
+        window.scrollTo({
+          top: targetOffset,
+          behavior: "smooth",
+        });
+      }
+    });
   });
 });
 // Fixed header end
 
+//
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".about__banner-item");
+
+  items.forEach((item) => {
+    if (item) {
+      item.addEventListener("click", function (e) {
+        e.stopPropagation();
+
+        // Проверяем, имеет ли текущий элемент класс 'show'
+        const isShowing = item.classList.contains("show");
+
+        // Удаляем класс 'show' у всех элементов
+        items.forEach((el) => {
+          el.classList.remove("show");
+        });
+
+        // Если у текущего элемента не было класса 'show', добавляем его
+        if (!isShowing) {
+          item.classList.add("show");
+        }
+      });
+    }
+  });
+});
+
+//
+
 //swiper
-let swiper;
+document.addEventListener("DOMContentLoaded", function () {
+  // Проверяем наличие элементов Swiper на странице
+  if (document.querySelector("#current")) {
+    new Swiper("#current", {
+      observer: true,
+      observeParents: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+      },
+    });
+  }
 
-swiper = new Swiper("#current", {
-  observer: true,
-  observeParents: true,
-  loop: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  // Настройки для различных размеров экранов
-  breakpoints: {
-    // Когда ширина экрана >= 320px
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    // Когда ширина экрана >= 640px
-    768: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-  },
-});
+  if (document.querySelector("#prior")) {
+    new Swiper("#prior", {
+      observer: true,
+      observeParents: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        561: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+      },
+    });
+  }
 
-swiper = new Swiper("#prior", {
-  observer: true,
-  observeParents: true,
-  loop: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  // Настройки для различных размеров экранов
-  breakpoints: {
-    // Когда ширина экрана >= 320px
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    // Когда ширина экрана >= 480px
-    561: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    // Когда ширина экрана >= 640px
-    1024: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-  },
-});
-
-swiper = new Swiper("#strategic", {
-  observer: true,
-  observeParents: true,
-  loop: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  // Настройки для различных размеров экранов
-  breakpoints: {
-    // Когда ширина экрана >= 320px
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    // Когда ширина экрана >= 480px
-    561: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    // Когда ширина экрана >= 640px
-    1024: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-  },
+  if (document.querySelector("#strategic")) {
+    new Swiper("#strategic", {
+      observer: true,
+      observeParents: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        561: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+      },
+    });
+  }
 });
 // swiper

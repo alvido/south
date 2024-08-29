@@ -10,6 +10,15 @@
         }
     }
 
+    &__info {
+        max-width: 400px;
+        width: 50%;
+
+        & p {
+            margin-top: 20px;
+        }
+    }
+
     & .title {
         margin-bottom: 25px;
 
