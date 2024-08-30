@@ -7,7 +7,25 @@
     }
 }
 
+.wpcf7-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    margin: 0;
+    border: none;
+    padding: 0;
+    color: #dc3232;
+    text-align: center;
+    width: 100%;
+}
+
 form {
+    position: relative;
     padding: 45px 50px;
     max-width: 700px;
     width: 100%;
@@ -31,6 +49,9 @@ form {
 
     & .wpcf7-form-control-wrap {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     & .wrap {
