@@ -1376,11 +1376,14 @@ form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
   z-index: 1;
 }
 @media (max-width: 767px) {
   .about__banner {
     margin-top: 25px;
+    background-attachment: scroll;
   }
 }
 .about__banner::before {
