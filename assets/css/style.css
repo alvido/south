@@ -242,38 +242,6 @@ svg * {
   font-display: swap;
   font-optical-sizing: auto;
 }
-@font-face {
-  font-family: "PTserif";
-  src: url("../fonts/ptserif-regular-webfont.woff"), url("../fonts/ptserif-regular-webfont.woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  font-optical-sizing: auto;
-}
-@font-face {
-  font-family: "PTserif";
-  src: url("../fonts/ptserif-italic-webfont.woff2"), url("../fonts/ptserif-italic-webfont.woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-  font-optical-sizing: auto;
-}
-@font-face {
-  font-family: "PTserif";
-  src: url("../fonts/ptserif-bold-webfont.woff"), url("../fonts/ptserif-bold-webfont.woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  font-optical-sizing: auto;
-}
-@font-face {
-  font-family: "PTserif";
-  src: url("../fonts/ptserif-bolditalic-webfont.woff"), url("../fonts/ptserif-bolditalic-webfont.woff2");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-  font-optical-sizing: auto;
-}
 :root {
   /*colors*/
   --color-black: #252323;
@@ -395,14 +363,14 @@ h6 {
 
 h1 {
   font-size: clamp(26px, 3.28125vw, 42px);
-  font-family: "PTserif", serif;
+  font-family: "PT serif", serif;
   font-weight: 400;
   line-height: 1.25;
 }
 
 h2 {
   font-size: clamp(22px, 2.34375vw, 30px);
-  font-family: "PTserif", serif;
+  font-family: "PT serif", serif;
   font-weight: 400;
   line-height: 1.25;
 }
@@ -1401,7 +1369,6 @@ form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
   .about__banner {
     margin-top: 25px;
     background-attachment: scroll;
-    background-image: url(../images/1122.jpg) !important;
   }
 }
 .about__banner::before {
@@ -2043,7 +2010,7 @@ form .custom-checkbox input[type=checkbox]:checked + .checkmark::after {
 }
 .founder blockquote {
   width: 50%;
-  font-family: "PTserif";
+  font-family: "PT serif";
   font-size: clamp(22px, 2.34375vw, 30px);
   padding-bottom: 120px;
 }

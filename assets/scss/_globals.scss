@@ -48,14 +48,14 @@ h6 {
 
 h1 {
     @include fluid-text(42, 26);
-    font-family: "PTserif", serif;
+    font-family: "PT serif", serif;
     font-weight: 400;
     line-height: 1.25;
 }
 
 h2 {
     @include fluid-text(30, 22);
-    font-family: "PTserif", serif;
+    font-family: "PT serif", serif;
     font-weight: 400;
     line-height: 1.25;
 }
