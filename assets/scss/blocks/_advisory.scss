@@ -21,25 +21,39 @@
             gap: 15px;
         }
 
-        & li {
-            width: 293px;
+        &>li {
+            width: calc(33% - 24px);
             min-height: 295px;
             padding: 30px;
             background: var(--color-white);
             border-radius: var(--border-radius);
 
-            @include mobile {
-                width: 48%;
+            @include tablet {
+                width: calc(50% - 8px);
                 min-height: 245px;
             }
 
-            @include phone {
+            @include mobile {
                 width: 100%;
             }
 
             & .large {
                 color: var(--color-blue);
                 margin-bottom: 11px;
+            }
+
+            & p {
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            & ul,
+            & ol {
+                font-size: 14px;
+                font-weight: 400;
+                &>li {
+                    margin: 0;
+                }
             }
         }
     }

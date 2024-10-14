@@ -103,8 +103,6 @@
             }
 
             @include hover {
-                scale: 1.1;
-
                 & svg path {
                     fill: var(--color-light-blue);
                 }

@@ -12,9 +12,8 @@
         }
     }
 
-    & .column {
-        max-width: 620px;
-        width: 50%;
+    & .column, & .founder-description {
+        margin-top: 25px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -33,15 +32,8 @@
         }
     }
 
-    & blockquote {
-        width: 50%;
-        font-family: "PT serif";
-        @include fluid-text(30, 22);
-        padding-bottom: 120px;
-
-        @include tablet {
-            width: 100%;
-            padding-bottom: 50px;
-        }
+    & .founder-blockquote {
+        margin-top: 25px;
     }
+
 }

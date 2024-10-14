@@ -106,49 +106,34 @@ section {
 }
 
 blockquote {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     position: relative;
     margin: 0;
-    padding: 140px 40px 50px;
+    padding: 50px 40px;
 
     font-weight: 500;
     color: var(--color-white);
     background: var(--color-blue);
     border-radius: var(--border-radius-small);
+    z-index: 1;
 
-    @include mobile {
-        padding: 105px 25px 30px;
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        left: 60px;
-        top: 60px;
-        display: block;
-        width: 49px;
-        height: 41px;
-        background: url(../images/icon/quote.svg) no-repeat center;
-        background-size: cover;
-
-        @include mobile {
-            top: 42px;
-            left: 34px;
-            width: 42px;
-            height: 35px;
-        }
+    @include tablet {
+        padding: 30px 25px;
     }
 
     &.blockquote--light {
-        padding-top: 175px;
         color: var(--color-black);
         background: var(--color-light-blue);
+    }
 
-        &::before {
-            background-image: url(../images/icon/quote-blue.svg);
-        }
+    & p {
+        margin: 0;
+        font-weight: 700;
+    }
 
-        @include mobile {
-            padding: 105px 25px 30px;
-        }
+    & cite {
+        font-style: italic;
     }
 }

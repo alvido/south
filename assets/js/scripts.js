@@ -103,103 +103,83 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //swiper
 document.addEventListener("DOMContentLoaded", function () {
-  // Проверяем наличие элементов Swiper на странице
-  if (document.querySelector("#current")) {
-    new Swiper("#current", {
-      observer: true,
-      observeParents: true,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-      },
-    });
-  }
+  // Получаем все элементы с классом swiper.partnership-slider
+  const partnership_sliders = document.querySelectorAll(".swiper.partnership-slider");
 
-  if (document.querySelector("#prior")) {
-    new Swiper("#prior", {
-      observer: true,
-      observeParents: true,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 10,
+  // Инициализируем Swiper для каждого элемента
+  partnership_sliders.forEach((slider) => {
+    if (slider) {
+      new Swiper(slider, {
+        observer: true,
+        observeParents: true,
+        loop: true,
+        autoHeight: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
         },
-        561: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+        pagination: {
+          el: slider.querySelector(".swiper-pagination"), // Привязываем пагинацию к текущему слайдеру
+          clickable: true,
         },
-        1024: {
-          slidesPerView: 2,
-          spaceBetween: 30,
+        navigation: {
+          nextEl: slider.querySelector(".swiper-button-next"), // Привязываем кнопки навигации к текущему слайдеру
+          prevEl: slider.querySelector(".swiper-button-prev"),
         },
-      },
-    });
-  }
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+        },
+      });
+    }
+  });
 
-  if (document.querySelector("#strategic")) {
-    new Swiper("#strategic", {
-      observer: true,
-      observeParents: true,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 10,
+
+  // Получаем все элементы с классом swiper.partnership-slider
+  const swipers = document.querySelectorAll(".swiper.double-swiper");
+
+  // Инициализируем Swiper для каждого элемента
+  swipers.forEach((swiper) => {
+    if (swiper) {
+      new Swiper(swiper, {
+        observer: true,
+        observeParents: true,
+        loop: true,
+        autoHeight: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
         },
-        561: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
         },
-        1024: {
-          slidesPerView: 2,
-          spaceBetween: 30,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
-      },
-    });
-  }
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          561: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        },
+      });
+    }
+  });
 });
 // swiper
